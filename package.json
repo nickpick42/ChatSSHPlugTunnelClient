@@ -1,0 +1,15 @@
+{
+  "name": "chatsshplug_tunnel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ChatSSHPlugTunnelClient.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io-client": "^4.7.2",
+    "yargs": "^17.7.2"
+  }
+}
