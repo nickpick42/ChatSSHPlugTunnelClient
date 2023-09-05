@@ -11,11 +11,9 @@ const chatSSHPlugTunnelClient = async()=>{
 
     if ( !tunnelKey ){
         console.log("Please provide tunnel key")
-        return
     }
     if ( !tunnelUrl ){
         console.log("Please provide tunnel url")
-        return
     }
     let currentUser = os.userInfo().username
     let platform = os.platform()
