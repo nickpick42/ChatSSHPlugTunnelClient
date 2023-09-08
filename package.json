@@ -5,7 +5,7 @@
   "main": "ChatSSHPlugTunnelClient.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ChatSSHPlugTunnelClient.js"
+    "start": "npm install && node ChatSSHPlugTunnelClient.js"
   },
   "author": "",
   "license": "ISC",
