@@ -1,6 +1,6 @@
 {
   "name": "create-chatsshplug_tunnel",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "",
   "main": "ChatSSHPlugTunnelClient.js",
   "bin": "./bin/cli.js",
