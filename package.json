@@ -1,21 +1,29 @@
 {
   "name": "create-chatsshplug_tunnel",
-  "version": "1.0.12",
-  "description": "",
+  "version": "1.0.17",
+  "description": "## Overview",
   "main": "ChatSSHPlugTunnelClient.js",
-  "bin": "./bin/cli.js",
+  "bin": {
+    "create-chatsshplug_tunnel": "bin/cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ChatSSHPlugTunnelClient.js"
+    "start": "node ChatSSHPlugTunnelClient.js",
+    "binStart": "node ./bin/cli.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nickpick42/ChatSSHPlugTunnelClient"
+    "url": "git+https://github.com/nickpick42/ChatSSHPlugTunnelClient.git"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "socket.io-client": "^4.7.2",
     "yargs": "^17.7.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/nickpick42/ChatSSHPlugTunnelClient/issues"
+  },
+  "homepage": "https://github.com/nickpick42/ChatSSHPlugTunnelClient#readme",
+  "keywords": []
 }

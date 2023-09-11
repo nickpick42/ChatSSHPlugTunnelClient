@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const { execSync } = require('child_process');
 const yargs = require("yargs");
@@ -18,21 +19,31 @@ const runCommand = ( command)=>{
     }
 }
 const executer = ()=>{
+
+    let workingDirectory = path.join(__dirname,`./${crypto.randomUUID()}`)
+    console.log("Creating working directory")
+    fs.mkdirSync(workingDirectory)
+    console.log("Working directory created: " + workingDirectory)
+
+
+
     console.log("Installing dependencies")
-    let result = runCommand("npm install")
-    if ( !result ){
-        console.log("Dependencies installation failed")
-        return
-    }
+    runCommand(`npm init -y && npm install yargs`)
+    runCommand(`cd ${workingDirectory} && npm init -y && npm install create-chatsshplug_tunnel`)
     let yargs = require("yargs")
 
-    console.log("Dependencies installed")
-    console.log("Building project")
 
     let tunnelKey = yargs.argv.tunnelKey
     let tunnelUrl = yargs.argv.tunnelUrl
 
-    runCommand(`npm run start -- --tunnelKey=${tunnelKey} --tunnelUrl=${tunnelUrl}`)
+    console.log(tunnelKey)
+    console.log(tunnelUrl)
+    fs.writeFileSync(workingDirectory+"/index.js",`
+        const chatSSHPlugTunnelClient = require("create-chatsshplug_tunnel")
+        chatSSHPlugTunnelClient('${tunnelKey}','${tunnelUrl}') 
+    `)
+    runCommand(`cd ${workingDirectory} && node index.js`)
+
 
 }
 executer()

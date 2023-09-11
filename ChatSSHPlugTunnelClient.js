@@ -3,11 +3,9 @@ const {exec} = require("child_process")
 const os = require("os")
 const yargs = require("yargs")
 
-const chatSSHPlugTunnelClient = async()=>{
+const chatSSHPlugTunnelClient = (tunnelKey, tunnelUrl)=>{
 
 
-    let tunnelKey = yargs.argv.tunnelKey
-    let tunnelUrl = yargs.argv.tunnelUrl
 
     if ( !tunnelKey ){
         console.log("Please provide tunnel key")
@@ -58,5 +56,4 @@ const chatSSHPlugTunnelClient = async()=>{
         })
     })
 }
-
-chatSSHPlugTunnelClient()
+module.exports = chatSSHPlugTunnelClient
